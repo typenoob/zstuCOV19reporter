@@ -7,6 +7,7 @@ class Robot:
         opt.add_argument('--headless')
         opt.add_argument('--disable-gpu')
         opt.add_argument('--no-sandbox')
+        opt.add_argument('disable-dev-shm-usage')
         self.browser = webdriver.Chrome(options=opt)
         self.browser.implicitly_wait(30)
         js = open('login.js', 'r').read()
