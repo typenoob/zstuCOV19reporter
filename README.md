@@ -1,6 +1,6 @@
 # zstuCOV19report
 
-## 2021/10/13 有效的浙江理工大学健康大卡sh脚本
+## 2021/10/13 有效的浙江理工大学健康打卡sh脚本
 
 - 以js为核心
 - python3编写，基于selenium的webdriver
