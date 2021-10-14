@@ -32,4 +32,5 @@ class Robot:
         time.sleep(5)
         self.browser.get_screenshot_as_file('./log/'+time.asctime()+'result.png')
 
+loadINFO()
 robot=Robot()
