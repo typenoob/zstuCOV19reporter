@@ -3,6 +3,7 @@ sudo apt-get update
 sudo apt-get install -y git
 git clone https://github.com/typenoob/zstuCOV19reporter
 cd zstuCOV19reporter
+chmod +x run.sh
 sudo apt-get install -y libxss1 libappindicator1 libindicator7 unzip xvfb libxi6 libgconf-2-4
 sudo apt-get install -y python3
 sudo apt-get install -y python3-pip
