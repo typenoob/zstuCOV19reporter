@@ -1,3 +1,4 @@
+import os
 username=input('请输入学号（为空加载上次配置）')
 if username:
     cmd='sed -i \'\'1s/=.*/='+username+'/g\'\' login.js'
