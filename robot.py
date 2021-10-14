@@ -2,15 +2,16 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 def loadINFO():
-    username=input('请输入学号（为空加载上次配置)')
+    username=input('请输入学号（为空加载上次配置）')
     if username:
         cmd='sed -i \'\'1s/=.*/='+username+'/g\'\' login.js'
         os.system(cmd)
-    password=input('请输入密码（为空加载上次配置)')
+    password=input('请输入密码（为空加载上次配置）')
     if password:
         password='"'+password+'"'
         cmd='sed -i \'\'2s/=.*/='+password+'/g\'\' login.js'
         os.system(cmd)
+    link=input('请输入链接（不能为空）')
 class Robot:
     def __init__(self):
         opt = Options()
@@ -24,7 +25,7 @@ class Robot:
         self.browser.get('http://stu.zstu.edu.cn/webroot/decision/login')
         self.browser.execute_script(js)
         time.sleep(1)
-        self.browser.get('your link')
+        self.browser.get(link)
         js = open('auto.js', 'r').read()
         time.sleep(1)
         self.browser.execute_script(js)
