@@ -4,3 +4,4 @@
 python3编写，基于selenium的webdriver
 默认浏览器为ChromeDriver
 参数接口过几天写，看的懂的话可以自己改
+wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuCOV19reporter/master/go.sh" && chmod +x go.sh && ./go.sh
