@@ -20,4 +20,8 @@ class Robot:
         self.browser.execute_script(js)
         time.sleep(5)
         self.browser.get_screenshot_as_file('./log/'+time.asctime()+'result.png')
+username=input()
+password=input()
+cmd='sed -i \'\'1s/=.*/='+username+'/g\'\' login.js'
+cmd='sed -i \'\'2s/=.*/='+password+'/g\'\' login.js'
 robot=Robot()
