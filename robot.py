@@ -14,6 +14,7 @@ class Robot:
         self.browser.get('http://stu.zstu.edu.cn/webroot/decision/login')
         self.browser.execute_script(js)
         time.sleep(1)
+        link = open('link.save', 'r').read()
         self.browser.get(link)
         js = open('auto.js', 'r').read()
         time.sleep(1)
