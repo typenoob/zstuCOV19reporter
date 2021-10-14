@@ -15,6 +15,18 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuC
 
 ```
 
+## 开启chromedriver服务
+
+新键一个终端并执行以下命令
+（ssh连接无法新建终端可以参考screen多开的方法 https://wxnacy.com/2017/12/21/screen/ ）
+
+```bash
+chromedriver
+
+```
+
+**余下的操作需返回原来终端进行**
+
 ## 进入工作文件夹
 
 ```bash
