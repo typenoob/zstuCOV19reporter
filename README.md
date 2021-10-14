@@ -6,7 +6,7 @@
 - 通过python3编写，基于selenium的webdriver
 - 默认浏览器为ChromeDriver
 
-## 一键安装脚本Editing zstuCOV19reporter/README.md at master · typenoob/zstuCOV19reporter
+## 一键安装脚本
 
 #### 通过 wget 命令安装 via wget to install script
 
