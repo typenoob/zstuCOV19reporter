@@ -76,7 +76,7 @@ python3 robot.py
 #### 脚本运行（运行直到成功，只要项目未失效就不会失败，推荐✔）
 
 ```bash
-bash run.sh
+./run.sh
 
 ```
 
