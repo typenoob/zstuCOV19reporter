@@ -8,3 +8,4 @@ if password:
     cmd='sed -i \'\'2s/=.*/='+password+'/g\'\' login.js'
     os.system(cmd)
 link=input('请输入链接（不能为空）')
+open('link.save', 'w').write(link)
