@@ -9,4 +9,9 @@
 
 ## 一键安装脚本
 
-**wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuCOV19reporter/master/go.sh" && chmod +x go.sh && ./go.sh**
+#### 通过 wget 命令安装 via wget to install script
+
+```bash
+wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuCOV19reporter/master/go.sh" && chmod +x go.sh && ./go.sh
+
+```
