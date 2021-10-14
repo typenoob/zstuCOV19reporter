@@ -5,7 +5,7 @@ git clone https://github.com/typenoob/zstuCOV19reporter
 cd zstuCOV19reporter
 sudo apt-get install -y python3
 sudo apt-get install -y python3-pip
-pip3 install selemium
+pip3 install selenium
 sudo apt-get install -y unzip
 sudo apt-get install -y chromium-browser
 wget http://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_linux64.zip
