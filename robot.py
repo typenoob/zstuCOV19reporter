@@ -1,6 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
+def loadINFO():
+    username=input('请输入学号（为空加载上次配置)')
+    if username:
+        cmd='sed -i \'\'1s/=.*/='+username+'/g\'\' login.js'
+        os.system(cmd)
+    password=input('请输入密码（为空加载上次配置)')
+    if password:
+        password='"'+password+'"'
+        cmd='sed -i \'\'2s/=.*/='+password+'/g\'\' login.js'
+        os.system(cmd)
 class Robot:
     def __init__(self):
         opt = Options()
@@ -20,8 +30,5 @@ class Robot:
         self.browser.execute_script(js)
         time.sleep(5)
         self.browser.get_screenshot_as_file('./log/'+time.asctime()+'result.png')
-username=input()
-password=input()
-cmd='sed -i \'\'1s/=.*/='+username+'/g\'\' login.js'
-cmd='sed -i \'\'2s/=.*/='+password+'/g\'\' login.js'
+
 robot=Robot()
