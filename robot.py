@@ -21,5 +21,6 @@ class Robot:
         self.browser.execute_script(js)
         time.sleep(5)
         self.browser.get_screenshot_as_file('./log/'+time.asctime()+'result.png')
+        self.browser.quit()
 
 robot=Robot()
