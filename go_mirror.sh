@@ -8,6 +8,7 @@ sudo apt-get install -y libxss1 libappindicator1 libindicator7 unzip xvfb libxi6
 sudo apt-get install -y python3
 sudo apt-get install -y python3-pip
 pip3 install selenium
+pip3 install pillow
 sudo apt-get install -y chromium-browser
 wget http://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
