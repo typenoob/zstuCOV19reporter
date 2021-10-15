@@ -3,7 +3,7 @@ source /etc/profile
 count=0
 stoped=5
 result=`python3 /root/zstuCOV19reporter/robot.py`
-while [ !$result == "successful!" ]    # 判断程序上次运行是否正常结束
+while [ ! $result == "successful!" ]    # 判断程序上次运行是否正常结束
 do
     echo "Process exits with errors! Restarting!"
     if [ $count == $stoped ]
