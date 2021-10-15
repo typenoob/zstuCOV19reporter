@@ -13,7 +13,6 @@ class Robot:
         histogram1 = image1.histogram()
         histogram2 = image2.histogram()
         differ = math.sqrt(reduce(operator.add, list(map(lambda a,b: (a-b)**2,histogram1, histogram2)))/len(histogram1))
-        print(differ)
         return differ
     def __init__(self):
         opt = Options()
