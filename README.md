@@ -55,9 +55,9 @@ cd zstuCOV19reporter
 #### 输入账号和密码
 终端运行
 
-···bash
+```bash
 python3 config.py
-···
+```
 
 ## 开始运行
 
