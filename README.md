@@ -1,4 +1,4 @@
-# zstuCOV19report
+# zstuCOV19reporter
 
 ## 2021/10/15 有效的浙江理工大学健康打卡sh脚本
 
