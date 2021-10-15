@@ -1,8 +1,18 @@
 #! /bin/bash
-python3 robot.py
-while [ $? -ne 0 ]    # 判断程序上次运行是否正常结束
+source /etc/profile
+count=0
+stoped=5
+result=`python3 /root/zstuCOV19reporter/robot.py`
+while [ !$result == "successful!" ]    # 判断程序上次运行是否正常结束
 do
     echo "Process exits with errors! Restarting!"
-    python3 robot.py    #重启程序
+    if [ $count == $stoped ]
+    then
+        echo "Process exits with errors! Can't autofix!"
+	break
+    else
+	count=`expr $count + 1`
+    fi
+    result=`python3 /root/zstuCOV19reporter/robot.py`
 done
-echo "Process ends!"
+echo $result
