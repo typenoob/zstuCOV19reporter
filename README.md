@@ -63,6 +63,13 @@ $zstuPATH/run.sh
 
 ```
 
+## 修改个人信息
+
+```bash
+bash $zstuPATH/config.sh
+
+```
+
 ## 日志信息
 
 #### 存储路径
