@@ -5,6 +5,7 @@ import datetime
 from PIL import Image
 import math
 import operator
+import os
 from functools import reduce
 class Robot:
     def compare(self,pic1,pic2):
@@ -46,5 +47,4 @@ class Robot:
             print('error...')
         self.browser.quit()
 
-workdir = '/root/'
-robot=Robot(workdir)
+robot=Robot(os.environ['zstuPATH'])
