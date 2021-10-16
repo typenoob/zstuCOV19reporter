@@ -14,7 +14,7 @@ class Robot:
         histogram2 = image2.histogram()
         differ = math.sqrt(reduce(operator.add, list(map(lambda a,b: (a-b)**2,histogram1, histogram2)))/len(histogram1))
         return differ
-    def __init__(self):
+    def __init__(self,workdir):
         opt = Options()
         opt.add_argument('--headless')
         opt.add_argument('--disable-gpu')
@@ -22,28 +22,29 @@ class Robot:
         opt.add_argument('disable-dev-shm-usage')
         self.browser = webdriver.Chrome(options=opt)
         self.browser.implicitly_wait(30)
-        js = open('/root/zstuCOV19reporter/login.js', 'r').read()
+        js = open('{path}zstuCOV19reporter/login.js'.format(path=workdir), 'r').read()
         self.browser.get('http://stu.zstu.edu.cn/webroot/decision/login')
         self.browser.execute_script(js)
         time.sleep(1)
-        link = open('/root/zstuCOV19reporter/link.save', 'r').read()
+        link = open('{path}zstuCOV19reporter/link.save'.format(path=workdir), 'r').read()
         self.browser.get(link)
-        js = open('/root/zstuCOV19reporter/auto.js', 'r').read()
+        js = open('{path}zstuCOV19reporter/auto.js'.format(path=workdir), 'r').read()
         time.sleep(1)
         html=self.browser.find_element_by_class_name('x-table').get_attribute('innerText')
-        open('./log/right.html','w',encoding="utf-8").write(html)
-        if html != open('/root/zstuCOV19reporter/log/right.html','r',encoding="utf-8").read():
+        open('{path}zstuCOV19reporter/log/right.html'.format(path=workdir),'w').write(html)
+        if html != open('{path}zstuCOV19reporter/log/right.html'.format(path=workdir),'r').read():
             print('invalid!!!')
             return
         self.browser.execute_script(js)
         time.sleep(5)
-        path='/root/zstuCOV19reporter/log/'+str(datetime.date.today())+'.png'
+        path='{path}zstuCOV19reporter/log/'.format(path=workdir)+str(datetime.date.today())+'.png'
         self.browser.get_screenshot_as_file(path)
-        self.browser.get_screenshot_as_file('./log/right.png')
-        if self.compare(path,'/root/zstuCOV19reporter/log/right.png')==0.0:
+        self.browser.get_screenshot_as_file('{path}zstuCOV19reporter/log/right.png'.format(path=workdir))
+        if self.compare(path,'{path}zstuCOV19reporter/log/right.png'.format(path=workdir)==0.0:
             print('successful!')
         else:
             print('error...')
         self.browser.quit()
 
-robot=Robot()
+workdir = '/root/'
+robot=Robot(workdir)
