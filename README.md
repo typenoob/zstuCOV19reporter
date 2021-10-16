@@ -112,7 +112,7 @@ $year-$month-$day.png
 
 #### 通过对比验证打卡是否成功
 
-基于pillow模块，robot.py在完成打卡的同时会比较当天打卡完成的截图与以往的是否相同，如果相同会输出“successful！”，如果不通会输出“error！”
+基于pillow模块，robot.py在完成打卡的同时会比较当天打卡完成的截图与以往的是否相同，如果相同会输出“successful！”，如果不同会输出“error！”
 
 ## 更新计划
 
