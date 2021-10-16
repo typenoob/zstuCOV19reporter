@@ -30,6 +30,7 @@ class Robot:
         self.browser.get(link)
         js = open('/root/zstuCOV19reporter/auto.js', 'r').read()
         time.sleep(1)
+        open('./log/right.html', 'w',encoding = "utf-8").write(self.browser.execute_script("return document.documentElement.outerHTML"))
         self.browser.execute_script(js)
         time.sleep(5)
         path='/root/zstuCOV19reporter/log/'+str(datetime.date.today())+'.png'
