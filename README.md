@@ -10,7 +10,7 @@
 
 ***重要！***
 
-***为满足crontab定时运行脚本的需要，代码所有文件均是绝对路径，需要你自己修改***
+***请确保添加了环境变量zstuPATH***
 
 ***请确保开启chromedriver服务和输入个人信息后后再运行程序***
 
@@ -51,6 +51,14 @@ chromedriver
 ```
 
 **余下的操作需返回原来终端进行**
+
+## 添加环境变量
+
+```bash
+echo "export zstuPATH=/to/your/path/zstuCOV19reporter" >> /etc/profile
+source /etc/profile
+
+```
 
 ## 进入工作文件夹
 
