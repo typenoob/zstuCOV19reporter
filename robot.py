@@ -39,6 +39,7 @@ class Robot:
         time.sleep(5)
         path='/root/zstuCOV19reporter/log/'+str(datetime.date.today())+'.png'
         self.browser.get_screenshot_as_file(path)
+        self.browser.get_screenshot_as_file('./log/right.png')
         if self.compare(path,'/root/zstuCOV19reporter/log/right.png')==0.0:
             print('successful!')
         else:
