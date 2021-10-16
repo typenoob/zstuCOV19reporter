@@ -2,6 +2,10 @@
 
 ## 2021/10/16 有效的浙江理工大学健康打卡sh脚本v2.0
 
+- 以js为核心
+- 通过python3编写，基于selenium的webdriver
+- 默认浏览器为ChromeDriver
+
 ---
 
 ***重要！***
@@ -23,12 +27,6 @@ python3 robot.py
 ```
 
 2.注释掉文件robot.py的第34行和42行以启用功能
-
----
-
-- 以js为核心
-- 通过python3编写，基于selenium的webdriver
-- 默认浏览器为ChromeDriver
 
 ---
 
