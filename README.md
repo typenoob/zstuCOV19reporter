@@ -10,9 +10,7 @@
 
 ***重要！***
 
-***请确保添加了环境变量zstuPATH***
-
-***请确保开启chromedriver服务和输入个人信息后后再运行程序***
+***请确保开启chromedriver服务和输入个人信息（包括环境变量zstuPATH）后后再运行程序***
 
 ---
 
@@ -50,55 +48,18 @@ chromedriver
 
 ```
 
-**余下的操作需返回原来终端进行**
-
-## 添加环境变量
-
-```bash
-echo "export zstuPATH=/to/your/path/zstuCOV19reporter" >> /etc/profile
-source /etc/profile
-
-```
-
-## 进入工作文件夹
-
-```bash
-cd zstuCOV19reporter
-
-```
-
-## 配置个人文件
-
-~~#### 爬取健康申报原生网页（只需一次）~~
-#### 我发现这个链接好像每个人通用的，可以直接使用我上传的link.save中的链接
-
-1. 浏览器输入地址 stu.zstu.edu.cn
-2. 登录你的账号
-3. 点击便捷服务->健康申报-PC，点击健康申报按钮
-4. 右键检查
-5. 按下ctr+f 输入 搜索元素 iframe
-6. 复制高亮元素的src值（双引号内）
-7. 浏览器输入地址stu.zstu.edu.cn/ 在后面粘贴上刚才复制的值，访问成功后保存该地址作为你的健康申报的原生网页地址
-
-#### 输入账号和密码
-终端运行
-
-```bash
-python3 config.py
-```
-
 ## 开始运行
 
 #### 直接运行（只运行一次，不能保证成功，不推荐✖）
 
 ```bash
-python3 robot.py
+python3 $zstuPATH/robot.py
 ```
 
 #### 脚本运行（运行直到成功 p.s. 最多五次，只要项目未失效就大概率不会失败，推荐✔）
 
 ```bash
-./run.sh
+$zstuPATH/run.sh
 
 ```
 
@@ -106,7 +67,7 @@ python3 robot.py
 
 #### 存储路径
 
-./log
+$zstuPATH/log
 
 #### 存储格式
 
