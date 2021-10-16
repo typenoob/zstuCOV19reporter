@@ -30,7 +30,11 @@ class Robot:
         self.browser.get(link)
         js = open('/root/zstuCOV19reporter/auto.js', 'r').read()
         time.sleep(1)
-        open('./log/right.html', 'w',encoding = "utf-8").write(self.browser.execute_script("return document.documentElement.outerHTML"))
+        html=self.browser.find_element_by_class_name('x-table').get_attribute('innerText')
+        open('./log/right.html','w',encoding="utf-8").write(html)
+        if html != open('./log/right.html','r',encoding="utf-8").read():
+            print('invalid!!!')
+            return
         self.browser.execute_script(js)
         time.sleep(5)
         path='/root/zstuCOV19reporter/log/'+str(datetime.date.today())+'.png'
