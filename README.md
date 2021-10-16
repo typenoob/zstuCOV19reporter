@@ -37,7 +37,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuC
 
 ```
 
-## 开启chromedriver服务
+## 开启chromedriver服务（已集成在一键脚本中）
 
 新键一个终端并执行以下命令
 
