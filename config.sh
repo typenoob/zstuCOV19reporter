@@ -14,7 +14,7 @@ fi
 read -p "请输入工作目录(/path/zstuCOV19reporter)(为空不修改):" path
 if [ $path ]
 then
-        echo zstuPATH=$path >> /etc/profile
+        echo "export zstuPATH=$path" >> /etc/profile
         source /etc/profile
 else
         echo "不修改"
