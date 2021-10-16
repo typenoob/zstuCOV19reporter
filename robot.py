@@ -41,7 +41,7 @@ class Robot:
         path='{path}/log/'.format(path=workdir)+str(datetime.date.today())+'.png'
         self.browser.get_screenshot_as_file(path)
         self.browser.get_screenshot_as_file('{path}/log/right.png'.format(path=workdir))
-        if self.compare(path,'{path}/log/right.png'.format(path=workdir)==0.0:
+        if self.compare(path,'{path}/log/right.png'.format(path=workdir))==0.0:
             print('successful!')
         else:
             print('error...')
