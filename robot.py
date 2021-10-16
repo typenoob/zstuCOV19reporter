@@ -32,7 +32,7 @@ class Robot:
         time.sleep(1)
         html=self.browser.find_element_by_class_name('x-table').get_attribute('innerText')
         open('./log/right.html','w',encoding="utf-8").write(html)
-        if html != open('./log/right.html','r',encoding="utf-8").read():
+        if html != open('/root/zstuCOV19reporter/log/right.html','r',encoding="utf-8").read():
             print('invalid!!!')
             return
         self.browser.execute_script(js)
