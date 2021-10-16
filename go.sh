@@ -16,5 +16,4 @@ sudo mv chromedriver /usr/bin/chromedriver
 sudo chown root:root /usr/bin/chromedriver
 sudo chmod +x /usr/bin/chromedriver
 sudo rm chromedriver_linux64.zip
-read -p "请输入用户名(为空加载上次配置)：" user
 bash config.sh
