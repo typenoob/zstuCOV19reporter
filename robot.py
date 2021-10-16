@@ -23,25 +23,25 @@ class Robot:
         opt.add_argument('disable-dev-shm-usage')
         self.browser = webdriver.Chrome(options=opt)
         self.browser.implicitly_wait(30)
-        js = open('{path}zstuCOV19reporter/login.js'.format(path=workdir), 'r').read()
+        js = open('{path}/login.js'.format(path=workdir), 'r').read()
         self.browser.get('http://stu.zstu.edu.cn/webroot/decision/login')
         self.browser.execute_script(js)
         time.sleep(1)
-        link = open('{path}zstuCOV19reporter/link.save'.format(path=workdir), 'r').read()
+        link = open('{path}/link.save'.format(path=workdir), 'r').read()
         self.browser.get(link)
-        js = open('{path}zstuCOV19reporter/auto.js'.format(path=workdir), 'r').read()
+        js = open('{path}/auto.js'.format(path=workdir), 'r').read()
         time.sleep(1)
         html=self.browser.find_element_by_class_name('x-table').get_attribute('innerText')
-        open('{path}zstuCOV19reporter/log/right.html'.format(path=workdir),'w').write(html)
-        if html != open('{path}zstuCOV19reporter/log/right.html'.format(path=workdir),'r').read():
+        open('{path}/log/right.html'.format(path=workdir),'w').write(html)
+        if html != open('{path}/log/right.html'.format(path=workdir),'r').read():
             print('invalid!!!')
             return
         self.browser.execute_script(js)
         time.sleep(5)
-        path='{path}zstuCOV19reporter/log/'.format(path=workdir)+str(datetime.date.today())+'.png'
+        path='{path}/log/'.format(path=workdir)+str(datetime.date.today())+'.png'
         self.browser.get_screenshot_as_file(path)
-        self.browser.get_screenshot_as_file('{path}zstuCOV19reporter/log/right.png'.format(path=workdir))
-        if self.compare(path,'{path}zstuCOV19reporter/log/right.png'.format(path=workdir)==0.0:
+        self.browser.get_screenshot_as_file('{path}/log/right.png'.format(path=workdir))
+        if self.compare(path,'{path}/log/right.png'.format(path=workdir)==0.0:
             print('successful!')
         else:
             print('error...')
