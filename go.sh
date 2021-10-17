@@ -17,6 +17,7 @@ sudo mv chromedriver /usr/bin/chromedriver
 sudo chown root:root /usr/bin/chromedriver
 sudo chmod +x /usr/bin/chromedriver
 sudo rm chromedriver_linux64.zip
+sudo cp run.sh /bin/report
 echo "依赖安装完成，开始个人信息配置..."
 bash config.sh
 echo "个人信息配置完成，请自行启动chromedriver"
