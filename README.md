@@ -14,9 +14,9 @@
 
 ---
 
-***v2.0升级 必看！！！***
+## ***v2.0升级 必看！！！***
 
-***增加页面失效检测***
+#### ***增加页面失效检测***
 
 1.手动运行一次核心程序(确保log目录下生成文件right.html和right.png)
 
@@ -28,6 +28,33 @@ python3 robot.py
 
 ---
 
+#### ***简化安装流程***
+
+***请以root用户进行操作***
+
+1.下载并运行安装脚本(过程中要输入学号密码信息，输入链接可以选择直接回车）
+
+
+```bash
+wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuCOV19reporter/master/go.sh" && chmod +x go.sh && ./go.sh
+
+```
+
+2.打开chromedriver服务（新开一个终端，或者通过screen保证其在后台运行）
+
+```bash
+chromedriver
+```
+
+3.增加页面失效检测（具体见上闻，可选非必要但推荐）
+
+4.运行命令开单次运行
+
+```bash
+report
+```
+5.服务器端通过crontab每天运行，详情见下文
+
 ## 一键安装脚本
 
 #### 通过 wget 命令安装 via wget to install script
@@ -37,7 +64,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuC
 
 ```
 
-## 开启chromedriver服务（已集成在一键脚本中）
+## 开启chromedriver服务
 
 新键一个终端并执行以下命令
 
