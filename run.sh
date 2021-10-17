@@ -13,6 +13,6 @@ do
     else
 	count=`expr $count + 1`
     fi
-    result=`python3 %zstuPATH/robot.py`
+    result=`python3 $zstuPATH/robot.py`
 done
 echo $result
