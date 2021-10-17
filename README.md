@@ -46,14 +46,21 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuC
 chromedriver
 ```
 
-3.增加页面失效检测（具体见上文，可选非必要但推荐）
+3.添加环境变量(yourpath是你的路径)
 
-4.运行命令开单次运行
+```bash
+echo "export zstuPATH=yourpath/zstuCOV19reporter" >> /etc/profile
+source /etc/profile
+```
+
+4.增加页面失效检测（具体见上文，可选非必要但推荐）
+
+5.运行命令开单次运行
 
 ```bash
 report
 ```
-5.服务器端通过crontab每天运行，详情见下文
+6.服务器端通过crontab每天运行，详情见下文
 
 ## 一键安装脚本
 
