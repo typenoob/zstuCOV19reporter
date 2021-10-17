@@ -46,7 +46,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuC
 chromedriver
 ```
 
-3.增加页面失效检测（具体见上闻，可选非必要但推荐）
+3.增加页面失效检测（具体见上文，可选非必要但推荐）
 
 4.运行命令开单次运行
 
