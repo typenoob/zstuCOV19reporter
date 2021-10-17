@@ -33,7 +33,7 @@ class Robot:
         time.sleep(1)
         html=self.browser.find_element_by_class_name('x-table').get_attribute('innerText')
         open('{path}/log/right.html'.format(path=workdir),'w').write(html)
-        if html != open('{path}/log/right.html'.format(path=workdir),'r').read():
+        if html[0:-14] != open('{path}/log/right.html'.format(path=workdir),'r').read()[0:-14]:
             print('invalid!!!')
             self.browser.quit()
             return
