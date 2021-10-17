@@ -35,6 +35,7 @@ class Robot:
         open('{path}/log/right.html'.format(path=workdir),'w').write(html)
         if html != open('{path}/log/right.html'.format(path=workdir),'r').read():
             print('invalid!!!')
+            self.browser.quit()
             return
         self.browser.execute_script(js)
         time.sleep(5)
