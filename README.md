@@ -70,6 +70,44 @@ bash $zstuPATH/config.sh
 
 ```
 
+## 生成命令
+
+```bash
+cp $zstuPATH/run.sh /bin/report
+
+```
+
+## 服务器端运行（依赖crontab）
+
+1.执行命令
+
+```bash
+crontab -e
+
+```
+
+2.在文件的末尾加入下面的语句，按下ctr+x->y->enter后保存退出（需要提前生成命令）
+
+```
+MAILTO=youremail@yourdomain.com
+00 8 * * * report
+
+```
+
+3.执行命令
+
+```bash
+service cron restart
+
+```
+
+4.查看是否生效
+
+```bash
+crontab -l
+
+```
+
 ## 日志信息
 
 #### 存储路径
