@@ -32,7 +32,7 @@ python3 robot.py
 
 ***请以root用户进行操作***
 
-1.下载并运行安装脚本(过程中要输入学号密码信息，输入链接可以选择直接回车）
+1.下载并运行安装脚本(过程中要输入学号密码和工作路径信息）
 
 
 ```bash
@@ -46,21 +46,14 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/typenoob/zstuC
 chromedriver
 ```
 
-3.添加环境变量(yourpath是你的路径)
+3.增加页面失效检测（具体见上文，可选非必要但推荐）
 
-```bash
-echo "export zstuPATH=yourpath/zstuCOV19reporter" >> /etc/profile
-source /etc/profile
-```
-
-4.增加页面失效检测（具体见上文，可选非必要但推荐）
-
-5.运行命令开单次运行
+4.运行命令开单次运行
 
 ```bash
 report
 ```
-6.服务器端通过crontab每天运行，详情见下文
+5.服务器端通过crontab每天运行，详情见下文
 
 ## 一键安装脚本
 
