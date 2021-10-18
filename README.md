@@ -113,11 +113,11 @@ crontab -e
 
 ```
 
-2.在文件的末尾加入下面的语句，按下ctr+x->y->enter后保存退出（需要提前生成命令）
+2.在文件的中加入下面的语句，按下ctr+x->y->enter后保存退出（需要提前生成命令）
 
 ```
-MAILTO=youremail@yourdomain.com
-00 8 * * * report
+MAILTO=youremail@yourdomain.com（这句话加在文件开头）
+00 8 * * * report（这句话加在文件末尾）
 
 ```
 
