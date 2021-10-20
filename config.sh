@@ -1,3 +1,4 @@
+read -p "请输入学号(为空加载上次配置)：" user
 if [ $user ]
 then
         sed -i "1s/=.*/=$user/" login.js
