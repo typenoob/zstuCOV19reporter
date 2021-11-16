@@ -1,8 +1,9 @@
 #! /bin/bash
 source /etc/profile
+cd /home/zstuCOV19reporter
 count=0
 stoped=5
-result=`python3 $zstuPATH/robot.py`
+result=`python3 robot.py`
 while [[ ! $result == "successful!" ]]    # 判断程序上次运行是否正常结束
 do
     echo "Process exits with errors! Restarting!"
@@ -13,6 +14,6 @@ do
     else
 	count=`expr $count + 1`
     fi
-    result=`python3 $zstuPATH/robot.py`
+    result=`python3 robot.py`
 done
 echo $result
