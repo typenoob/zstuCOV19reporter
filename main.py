@@ -21,20 +21,20 @@ def success(name):
 def login():
     xh = request.form['xh']
     mm = request.form['mm']
-    os.system('sed -i "1s/=.*/={xh}/" login.js'.format(xh=xh))
-    os.system('sed -i "2s/=.*/=\"{mm}\"/" login.js'.format(mm=mm))
+    os.system('sed -i \'1s/=.*/={xh}/\' login.js'.format(xh=xh))
+    os.system('sed -i \'2s/=.*/="{mm}"/\' login.js'.format(mm=mm))
     return redirect(url_for('hello'))
 
 
 @app.route('/go', methods=['POST'])
 def go():
-    flash(os.popen('python robot.py').read())
+    flash(os.popen('python3 robot.py').read())
     return redirect(url_for('hello'))
 
 
 @app.route('/html', methods=['POST'])
 def html():
-    os.system('mv {path} ./log/right.png'.format(path=htmlpath))
+    os.system('mv {path} ./log/right.html'.format(path=htmlpath))
     return redirect(url_for('hello'))
 
 

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
@@ -28,19 +30,19 @@ class Robot:
             opt.add_argument('disable-dev-shm-usage')
             self.browser = webdriver.Chrome(options=opt)
             self.browser.implicitly_wait(30)
-            js = open('./login.js', 'r', encoding='utf-8').read()
+            js = open('./login.js', 'r',).read()
             self.browser.get('http://stu.zstu.edu.cn/webroot/decision/login')
             self.browser.execute_script(js)
             time.sleep(1)
-            link = open('./link.save', 'r', encoding='utf-8').read()
+            link = open('./link.save', 'r').read()
             self.browser.get(link)
-            js = open('./auto.js', 'r', encoding='utf-8').read()
+            js = open('./auto.js', 'r').read()
             time.sleep(1)
             htmlpath = './log/' + str(datetime.date.today())+'.html'
             html = self.browser.find_element_by_class_name(
                 'x-table').get_attribute('innerText')
-            open(htmlpath, 'w', encoding='utf-8').write(html)
-            if html[0:-14] != open('./log/right.html', 'r', encoding='utf-8').read()[0:-14]:
+            open(htmlpath, 'w').write(html)
+            if html[0:-14] != open('./log/right.html', 'r').read()[0:-14]:
                 print('页面检验不成功（确认程序未失效可更新界面）')
                 self.browser.quit()
                 return
