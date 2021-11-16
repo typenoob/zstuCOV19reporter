@@ -28,13 +28,13 @@ def login():
 
 @app.route('/go', methods=['POST'])
 def go():
-    flash(os.popen('python robot.py').read())
+    flash(os.popen('python3 robot.py').read())
     return redirect(url_for('hello'))
 
 
 @app.route('/html', methods=['POST'])
 def html():
-    os.system('mv {path} ./log/right.png'.format(path=htmlpath))
+    os.system('mv {path} ./log/right.html'.format(path=htmlpath))
     return redirect(url_for('hello'))
 
 
