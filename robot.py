@@ -32,7 +32,7 @@ class Robot:
             self.browser = webdriver.Chrome(options=opt)
             self.browser.implicitly_wait(30)
             js = open('./login.js', 'r',).read()
-            self.browser.get('http://stu.zstu.edu.cn/webroot/decision/login')
+            self.browser.get('http://stu3.zstu.edu.cn/webroot/decision/login')
             self.browser.execute_script(js)
             time.sleep(1)
             link = open('./link.save', 'r').read()
