@@ -2,8 +2,10 @@ FROM markadams/chromium-xvfb-py2
 ADD ./crontask /etc/cron.d/crontask
 WORKDIR /srv/zstu
 COPY * ./
+COPY templates/index.html ./templates/index.html
 
 RUN apt-get -y install jq
+RUN apt-get -y install cron
 
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt \
