@@ -16,4 +16,4 @@ do
     fi
     result=`python3 robot.py`
 done
-echo $result
+echo $result|mail -s test 850683617@qq.com
