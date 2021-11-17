@@ -1,6 +1,5 @@
 #! /bin/bash
 source /etc/profile
-cd /root/zstuCOV19reporter
 count=0
 stoped=5
 result=`python3 robot.py`
