@@ -11,7 +11,9 @@ RUN apt-get update \
     && pip3 install -r requirements.txt \
     && chmod 0644 /etc/cron.d/crontask \
     && echo "#!/bin/sh\n" > /home/boot.sh \
-    && echo "service cron start" >> /home/boot.sh \
+    && echo "service cron restart" >> /home/boot.sh \
+    && echo "\n" >> /home/boot.sh \
+    && echo "crontab /etc/cron.d/crontask" >> /home/boot.sh \
     && echo "\n" >> /home/boot.sh \
     && echo "flask run --host=0.0.0.0" >> /home/boot.sh \
     && echo "\n" >> /home/boot.sh \
