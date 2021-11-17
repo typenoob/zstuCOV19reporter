@@ -1,14 +1,15 @@
-FROM markadams/chromium-xvfb-py2
+FROM joyzoursky/python-chromedriver:latest
 ADD ./crontask /etc/cron.d/crontask
+COPY . /srv/zstu
+
 WORKDIR /srv/zstu
-COPY * ./
-COPY templates/index.html ./templates/index.html
-
-RUN apt-get -y install jq
-RUN apt-get -y install cron
-
-RUN pip install --upgrade pip \
-    && pip install -r requirements.txt \
+RUN apt-get update \
+    && apt-get install -y jq cron \
+    && apt autoremove -y \
+    && apt-get clean \
+    && pip3 install --upgrade pip \
+    && pip3 install -r requirements.txt \
+    && chmod 0644 /etc/cron.d/crontask \
     && echo "#!/bin/sh\n" > /home/boot.sh \
     && echo "service cron start" >> /home/boot.sh \
     && echo "\n" >> /home/boot.sh \
@@ -17,5 +18,5 @@ RUN pip install --upgrade pip \
     && echo "/bin/bash" >> /home/boot.sh \
     && cp run.sh /bin/report
 
-WORKDIR /srv/zstu
+WORKDIR /srv/zstu   
 CMD [ "/bin/bash", "/home/boot.sh" ]
