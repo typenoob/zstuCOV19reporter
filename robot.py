@@ -9,6 +9,7 @@ import math
 import operator
 import sys
 from functools import reduce
+from selenium.webdriver.common.by import By
 
 
 class Robot:
@@ -39,8 +40,8 @@ class Robot:
             js = open('./auto.js', 'r').read()
             time.sleep(1)
             htmlpath = './log/' + str(datetime.date.today())+'.html'
-            html = self.browser.find_element_by_class_name(
-                'x-table').get_attribute('innerText')
+            html = self.browser.find_element(By.CLASS_NAME,
+                                             'x-table').get_attribute('innerText')
             open(htmlpath, 'w').write(html)
             if html[0:-14] != open('./log/right.html', 'r').read()[0:-14]:
                 print('页面检验不成功（确认程序未失效可更新界面）')
