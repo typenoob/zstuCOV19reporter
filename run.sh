@@ -1,8 +1,9 @@
 #! /bin/bash
 source /etc/profile
+cd /srv/zstu
 count=0
 stoped=5
-result=`python3 /srv/zstu/robot.py`
+result=`python3 robot.py`
 while [[ ! $result == "successful!" ]]    # 判断程序上次运行是否正常结束
 do
     echo "Process exits with errors! Restarting!"
@@ -13,7 +14,7 @@ do
     else
 	count=`expr $count + 1`
     fi
-    result=`python3 /srv/zstu/robot.py`
+    result=`python3 robot.py`
 done
 
 #使用方法 sh ./send_message.sh "发送内容"
