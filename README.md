@@ -18,7 +18,7 @@ docker run -d --rm -p 5000:5000 typenoob/zstu
 ```
 
 ```bash
-docker exec typenoob/zstu sed -i '25s/=.*/="yourid"/' /bin/report
+docker exec yourcontainerID sed -i '25s/=.*/="yourid"/' /bin/report
 
 ```
 
