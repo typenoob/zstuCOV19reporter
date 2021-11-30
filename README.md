@@ -12,7 +12,7 @@ docker run -d --name zstu --restart=always -p 5000:5000 typenoob/zstu
 ```
 
 ```bash
-docker exec yourcontainerID sed -i '25s/=.*/="yourid"/' /bin/report
+docker exec zstu sed -i '25s/=.*/="yourid"/' /bin/report
 
 ```
 
