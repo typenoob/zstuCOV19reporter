@@ -10,9 +10,21 @@ import operator
 import sys
 from functools import reduce
 from selenium.webdriver.common.by import By
-
+import requests
+import os
 
 class Robot:
+    def getValidProxy(self):
+        group = str(requests.get('https://raw.fastgit.org/fate0/proxylist/master/proxy.list').content)[2:-1].split('\\n')
+        null = None
+        group = group[0:-2]
+        dicts = []
+        for i in group:
+            dic = eval(i)
+            if dic['country'] == 'CN':
+                if not os.system('curl -x {host}:{port} www.baidu.com>/dev/null 2>&1'.format(host=dic['host'], port=dic['port'])):
+                    return dic
+    
     def compare(self, pic1, pic2):
         image1 = Image.open(pic1)
         image2 = Image.open(pic2)
@@ -29,6 +41,8 @@ class Robot:
             opt.add_argument('--disable-gpu')
             opt.add_argument('--no-sandbox')
             opt.add_argument('disable-dev-shm-usage')
+            proxy = self.getValidProxy()
+            opt.add_argument('--proxy-server=http://{host}:{port}'.format(host=proxy['host'],port=proxy['port']))
             self.browser = webdriver.Chrome(options=opt)
             self.browser.implicitly_wait(30)
             js = open('./login.js', 'r',).read()
