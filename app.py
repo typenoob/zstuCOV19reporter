@@ -3,8 +3,6 @@ import os
 import datetime
 app = Flask(__name__)
 app.secret_key = 'chen..02'
-picpath = './log/' + str(datetime.date.today())+'.png'
-htmlpath = './log/' + str(datetime.date.today())+'.html'
 
 
 @app.route('/')
@@ -34,12 +32,14 @@ def go():
 
 @app.route('/html', methods=['POST'])
 def html():
+    htmlpath = './log/' + str(datetime.date.today())+'.html'
     os.system('mv {path} ./log/right.html'.format(path=htmlpath))
     return redirect(url_for('hello'))
 
 
 @app.route('/pic', methods=['POST'])
 def pic():
+    picpath = './log/' + str(datetime.date.today())+'.png'
     os.system('mv {path} ./log/right.png'.format(path=picpath))
     return redirect(url_for('hello'))
 
