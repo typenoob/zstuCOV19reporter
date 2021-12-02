@@ -18,8 +18,8 @@ docker run -d --name zstu --restart=always -p 5000:5000 -v /home/zstu:/srv/zstu 
 ## 使用代理
 
 ```bash
-docker pull typenoob/zstu
-docker run -d --name zstu --restart=always -p 5000:5000 -v /home/zstu:/srv/zstu typenoob/zstu
+docker pull typenoob/zstu:proxy
+docker run -d --name zstu --restart=always -p 5000:5000 -v /home/zstu:/srv/zstu typenoob/zstu:proxy
 
 ```
 
