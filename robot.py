@@ -22,7 +22,7 @@ class Robot:
         for i in group:
             dic = eval(i)
             if dic['country'] == 'CN':
-                if not os.system('curl -x {host}:{port} www.baidu.com>/dev/null 2>&1'.format(host=dic['host'], port=dic['port'])):
+                if not os.system('curl --connect-timeout 10 -x {host}:{port} stu.zstu.edu.cn/webroot/decision/login >/dev/null 2>&1'.format(host=dic['host'], port=dic['port'])):
                     return dic
     
     def compare(self, pic1, pic2):
