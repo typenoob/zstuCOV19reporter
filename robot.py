@@ -62,7 +62,8 @@ class Robot:
                 self.browser.quit()
                 return
             self.browser.execute_script(js)
-            time.sleep(15)
+            self.browser.find_element(By.CLASS_NAME, 'slimScrollBarX')
+            time.sleep(1)
             picpath = './log/' + str(datetime.date.today())+'.png'
             self.browser.get_screenshot_as_file(picpath)
             if self.compare(picpath, './log/right.png') == 0.0:
