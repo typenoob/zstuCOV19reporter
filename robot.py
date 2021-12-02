@@ -62,7 +62,7 @@ class Robot:
                 self.browser.quit()
                 return
             self.browser.execute_script(js)
-            time.sleep(5)
+            time.sleep(15)
             picpath = './log/' + str(datetime.date.today())+'.png'
             self.browser.get_screenshot_as_file(picpath)
             if self.compare(picpath, './log/right.png') == 0.0:
