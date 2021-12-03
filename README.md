@@ -19,7 +19,7 @@ docker run -d --name zstu --restart=always -p 5000:5000 -v /home/zstu:/srv/zstu 
 
 ```bash
 docker pull typenoob/zstu
-docker exec zstu sed -i 's/proxy-server=*/proxy-server=http://{host}:{port}/' /srv/zstu/robot.py
+docker exec zstu sed -i "s/proxy-server=.*/proxy-server=http:\/\/{host}:{port}\')/" /srv/zstu/robot.py
 docker exec zstu sed -i 's/#//' /srv/zstu/robot.py
 
 ```
