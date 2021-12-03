@@ -18,13 +18,12 @@ docker run -d --name zstu --restart=always -p 5000:5000 -v /home/zstu:/srv/zstu 
 ## 设置静态代理
 
 ```bash
-docker pull typenoob/zstu
 docker exec zstu sed -i "46s/proxy-server=.*/proxy-server=http:\/\/{host}:{port}\')/" /srv/zstu/robot.py
 docker exec zstu sed -i '46s/#//' /srv/zstu/robot.py
 
 ```
 
-## 使用动态代理
+## 使用动态代理镜像（测试中）
 
 ```bash
 docker pull typenoob/zstu:proxy
