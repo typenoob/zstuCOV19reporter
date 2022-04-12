@@ -1,3 +1,4 @@
+**WANING! The repository was deprecated.Please check out at a [new version](https://github.com/typenoob/zstu_report).**
 # zstuCOV19reporter（docker安装请切换至docker分支）
 
 ## 2021/10/16 有效的浙江理工大学健康打卡sh脚本v2.0
